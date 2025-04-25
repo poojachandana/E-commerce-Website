@@ -1,0 +1,1391 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button.normal{
+  font-size: 14px; 
+  font-weight: 600;
+  padding: 15px 30px;
+  color: black;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+button.white{
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 18px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+  transition: 0.2s;
+}
+
+
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Header */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background: #e3e6f3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+/* Highlighted Offer Section */
+#offer {
+  text-align: center;
+  background: linear-gradient(90deg, #ff0000, #ff7f00); /* Red to Orange Gradient */
+  color: white;
+  padding: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 30px auto;
+  max-width: 90%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Increase Font Size & Highlight Important Words */
+#offer span {
+  color: yellow;
+  font-size: 32px;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Glowing Effect */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); }
+  100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+}
+
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+#navbar li a:hover, #navbar li a.active {
+  color: blue;
+}
+
+#navbar li a.active::after, #navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+#mobile{
+  display: none;
+  align-items: center;
+}
+#close{
+  display: none;
+}
+
+/* Hero Section */
+#hero {
+  background-image: url("background.jpg");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Highlight Offer Section */
+#offer {
+  text-align: center;
+  background: linear-gradient(to right, #ff9800, #ff5722);
+  color: white;
+  padding: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 80%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: pulse 1.5s infinite;
+}
+
+#offer span {
+  color: yellow;
+  font-size: 24px;
+}
+
+/* Animation for Attention */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Feature Section */
+#feature {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+#feature .fe-box {
+  flex: 1;
+  min-width: 150px; 
+  text-align: center;
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+}
+
+#feature .fe-box h6 {
+  display: inline-block;
+  padding: 9px 8px;
+  color: #088178;
+  background-color: #fddde4;
+  border-radius: 4px;
+}
+
+/* Product Section */
+#product1 {
+  text-align: center;
+}
+
+#product1 .pro-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#product1 .pro {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 15px 0;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+#product1 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+#product1 .pro img{
+  width: 100%;
+  border-radius: 20px;
+}
+#product1 .pro .des{
+  text-align: start;
+  padding: 10px 0;;
+}
+#product1 .pro .des span{
+color: #606063;
+font-size: 12px;
+}
+#product1 .pro .des h5{
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+#product1 .pro .des i{
+  font-size: 12px;
+  color: rgb(243,181,25);
+}
+#product1 .pro .des h4{
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color:#088178
+}
+#product1 .pro .cart {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e8f6ea;
+  font-weight: 500;
+  color:#088178;
+border: 1px solid #cce7d0;
+position: absolute;
+bottom: 20px;
+right: 10px;
+}
+
+/* Banner */
+#banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(banner.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#banner h2 span {
+  color: red;
+}
+
+/* Responsive Fix */
+img {
+  max-width: 100%;
+  height: auto;
+}
+#banner button:hover{
+  background: #088178;
+  color: #eff;
+}
+#sm-banner{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 20px;
+  
+}
+#sm-banner .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 100%; /* Set width to fit the page */
+  max-width: 100%; /* Ensures it doesn't overflow */
+  height: 50vh; /* Keeps the height consistent */
+  background-size: cover;
+  background-position: center;
+  padding: 30px; /* Adds some spacing */
+  box-sizing: border-box; /* Ensures padding doesn’t affect width */
+}
+#sm-banner .banner-box {
+  background-image: url(banner1.jpg);
+}
+
+/* Background for the second banner */
+#sm-banner .banner-box2 {
+  background-image: url(banner2.jpg);
+}
+#sm-banner h4{
+  color:#eff;
+  font-size: 20px;
+  font-weight: 300;
+}
+#sm-banner h2{
+  color:#eff;
+  font-size: 28px;
+  font-weight: 800;
+}
+#sm-banner span{
+  color:#eff;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+#sm-banner .banner-box:hover button{
+  background-color:#088178 ;
+  border: 1px solid #088178;
+}
+#banner3 {
+  display: flex;
+  flex-direction: row; /* Align banners in a row */
+  justify-content: space-between; /* Evenly distribute banners */
+  gap: 20px; /* Adds space between banners */
+  width: 100%;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  margin: 50px 40px; /* Adds gap from top, bottom, left, and right */
+  padding: 20px; /* Adds inner spacing */
+}
+
+#banner3 .banner-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 32%; /* Makes them fit in one row */
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  padding: 30px;
+  box-sizing: border-box;
+  color: white; /* Ensure text is readable */
+}
+#banner3 h3{
+  color:red;
+  font-weight: 800;
+  font-size: 15px;
+}
+/* Different Background Images for Each Banner */
+#banner3 .banner-box:nth-child(1) { background-image: url('b3.jpg'); }
+#banner3 .banner-box:nth-child(2) { background-image: url('b4.jpeg'); }
+#banner3 .banner-box:nth-child(3) { background-image: url('b5.jpg'); }
+
+#newsletter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-image: url("b6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures image covers the area */
+  background-position: center; /* Centers the background */
+  background-color: #041e42;
+  min-height: 200px; /* Ensures it doesn’t collapse */
+  padding: 40px; /* Inner spacing */
+  margin: 20px; /* Outer spacing (gap from all sides) */
+  border-radius: 10px; /* Optional: Rounds corners for a softer look */
+  color: white; /
+}
+#newsletter h4{
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+#newsletter p{
+  font-size: 14px;
+  font-weight: 600;
+  color: #088178;
+}
+
+#newsletter p span{
+  color:#ffbd27
+}
+#newsletter .form{
+  display:flex;
+  width: 40%;
+
+}
+#newsletter input{
+  height: 3.125rem;
+
+  padding: 0 1.25em;
+  font-size: 14px;
+  width:100%;
+  border:1px solid transparent;
+  border-radius: 4px;
+  outline: none;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+#newsletter button{
+  background-color: #088178;
+  color: #fff;
+  white-space: nowrap;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Footer styling */
+footer {
+  background: #f1f1f1;
+  color: #333;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer sections */
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  min-width: 250px;
+}
+
+/* Headings */
+.footer-section h2, 
+.footer-section h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Text and links */
+.footer-section p, 
+.footer-section a {
+  font-size: 14px;
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-section a:hover {
+  color: #000;
+}
+
+/* Reduce and align all icons and logos */
+.social-links img, 
+.app-buttons img, 
+.payment-icons img {
+  width: 30px;  /* Uniform size */
+  height: auto;
+  margin: 5px;
+}
+
+/* Align payment logos in a row */
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Reduce brand logo size */
+.footer-section img:first-child {
+  width: 60px; /* Small brand logo */
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Center align social icons */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 0;
+  background: #ddd;
+  color: #555;
+  width: 100%;
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+  height: 50px; /* Adjust height as needed */
+}
+
+
+/* Shop page */
+#page-header {
+  background-image: url("b7.jpeg");
+  width: 100%;
+  height: 40vh;
+  background-size: cover; /* or contain */
+  background-position: center;
+  text-align: center;
+  display: flex; /* Needed for flexbox */
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  padding: 14px;
+}
+
+#page-header h2, #page-header p {
+  color: #fff;
+}
+
+.pro-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+.pro {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pro img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.des {
+  padding: 10px;
+}
+
+.star {
+  color: gold;
+}
+
+.cart {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+}
+#pagination{
+  text-align: center;
+}
+#pagination a{
+  text-decoration: none;
+  background-color: #088178;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color:white;
+  font-weight: 600;
+}
+#pagination a i{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/*Single Product*/
+#prodetails{
+display:flex;
+margin-top: 20px;
+
+}
+#prodetails .single-pro-image{
+width: 40%;
+margin-right: 50px;
+}
+.small-img-group{
+  display: flex;
+  justify-content: space-between;
+}
+.small-img-col{
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+#prodetails .single-pro-details{
+width: 50%;
+padding-top:30px;
+
+}
+#prodetails .single-pro-details h4{
+  padding: 40px 0 20px 0;
+}
+#prodetails .single-pro-details h2{
+  font-size: 26px;
+}
+#prodetails .single-pro-details select{
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+#prodetails .single-pro-details input{
+  width:50px;
+  height:47px;
+  padding-left:10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+#prodetails .single-pro-details button{
+  background: #088178;
+  color:#fff;
+}
+#prodetails .single-pro-details input:focus{
+outline: none;
+}
+#prodetails .single-pro-details span{
+  line-height: 25px;
+
+}
+/*Blog page */
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between elements */
+  margin-top: 20px;
+}
+
+#pagination a {
+  text-decoration: none;
+  background-color: #088178;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  display: inline-flex;  /* Fixes unwanted box */
+  align-items: center;
+  justify-content: center;
+  min-width: 40px; /* Ensures uniform width */
+}
+
+#pagination a i {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#page-header.blog-header { /* Applies only to blog.html */
+  background-image: url("b8.jpg");
+}
+
+#blog {
+  padding: 100px 150px 0 150px;
+}
+
+#blog .blog-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Even spacing */
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 40px; /* Increased spacing for better layout */
+}
+
+#blog .blog-img img {
+  width: 300px; /* Increased size */
+  height: 300px; /* Keeps it proportional */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#blog .blog-details {
+  flex: 1;
+  max-width: 600px;
+}
+
+#blog .blog-details h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#blog .blog-details p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 10px; /* Adds space below paragraph */
+}
+
+#blog .blog-details a {
+  color: black; /* Kept it black as per your request */
+  font-weight: bold;
+  text-decoration: none;
+transition: 0.3s;
+}
+#blog .blog-details a:hover{
+  color: blue; /* Kept it black as per your request */
+  
+}
+
+#blog h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: black; /* No blue */
+  padding: 10px 15px;
+  text-align: center;
+  min-width: 80px;
+}
+
+#blog .blog-boxh1{
+  position: absolute;
+  top:-40px;
+  left:0;
+  font-size:70px;
+  color:#c9cbce
+}
+/* About page */
+
+#page-header.about-header{
+background-image: url("b9.jpg");
+}
+#about-head{
+  display:flex;
+  align-items: center;
+}
+#about-head img{
+  width:50%;
+  height:auto;
+  padding: 50px 50px 0 50px;
+}
+
+#about-head div{
+  padding-top: 50px;
+  padding-left: 40px;
+}
+
+#page-header.about-header {
+  background-image: url("b9.jpg");
+}
+
+#about-head {
+  display: flex;
+  align-items: center;
+}
+
+#about-head img {
+  width: 50%;
+  height: auto;
+  padding: 50px 50px 0 50px;
+}
+
+#about-head div {
+  padding-top: 50px;
+  padding-left: 40px;
+}
+
+#about-head h2 {
+  font-size: 32px; /* Larger text */
+  font-weight: bold; /* Makes it bold */
+  color: black; /* Ensures it is not blue */
+}
+
+#about-head p, #about-head abbr {
+  color: black; /* Removes blue color */
+  text-decoration: none; /* Removes underline */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#about-head abbr {
+  font-style: italic; /* Optional: Keeps it stylish */
+}
+
+marquee {
+  font-weight: bold;
+  text-decoration: underline; /* Underlines marquee text */
+  font-size: 18px; /* Makes it stand out */
+}
+#about-app {
+  display: flex;
+  flex-direction: column; /* Stack elements */
+  align-items: center; /* Center content */
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px; /* Adds space */
+}
+
+#about-app h2 {
+  font-size: 28px; /* Adjust heading size */
+  font-weight: bold;
+  color: black;
+  margin-bottom: 15px;
+}
+
+#about-app .video {
+  width: 80%; /* Makes it responsive */
+  max-width: 400px; /* Limits size on large screens */
+  height: auto; /* Keeps aspect ratio */
+  margin: 20px 0; /* Adds space */
+}
+
+#about-app .video video {
+  width: 100%;
+  height: auto; /* Ensures proper scaling */
+  border-radius: 10px;
+  display: block; /* Removes extra spacing */
+}
+
+/*Contact*/
+.details {
+  max-width: 600px; /* Adjust width as needed */
+  margin: 0; /* Remove auto margin to align left */
+  padding: 10px; /* Minimal padding to avoid edge touching */
+  text-align: left; /* Ensure text aligns left */
+}
+
+.details span,
+.details h2,
+.details h3,
+.details div,
+.details li,
+.details p {
+  margin: 0;
+  padding: 0;
+}
+
+.details li {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  margin-bottom: 10px; /* Space between each list item */
+}
+
+.details i {
+  font-size: 20px;
+  color: #007bff; /* Adjust icon color */
+}
+
+.details a {
+  text-decoration: none !important; /* Remove underline */
+  color: black !important;
+}
+
+.details a:hover,
+.details a:focus,
+.details a:visited {
+  text-decoration: none !important;
+  color: black !important;
+}
+#contact-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#contact-details .details{
+  width: 40%;
+
+}
+#form-details {
+  width: 50%;
+  margin-left: 50px; /* Aligns left with some spacing */
+}
+
+#form-details form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px; /* Adds space between elements */
+  width: 100%;
+}
+
+#form-details span {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+}
+
+#form-details h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#form-details input,
+#form-details textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#form-details button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 120px;
+}
+
+#form-details button:hover {
+  background-color: #0056b3;
+}
+#form-details {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#contact-info {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.contact-card p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* CART */
+/* cart page */
+#cart table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img {
+  width: 70px;
+}
+
+#cart table td:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+
+#cart table td:nth-child(2) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(3) {
+  width: 250px;
+  text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+  width: 150px;
+  text-align: center;
+}
+
+#cart table td:nth-child(5) input {
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+  border: 1px solid #e2e9e1;
+  border-left: none;
+  border-right: none;
+}
+
+#cart table thead td {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+}
+
+#cart table tbody tr td {
+  padding-top: 15px;
+}
+
+#cart table tbody td {
+  font-size: 13px;
+}
+
+
+#cart-add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#coupon {
+  width: 50%;
+  margin-bottom: 30px; /* Changed from 30% to 30px */
+}
+
+#coupon h3,
+#subtotal h3 {
+  padding-bottom: 15px;
+}
+
+#coupon input {
+  padding: 10px;
+  outline: none;
+  width: 250px; /* Adjust width for usability */
+  margin-right: 10px;
+  border: 1px solid #e2e9e1; /* Fixed "boarder" typo */
+  border-radius: 5px; /* Optional: Makes input look nicer */
+}
+
+#coupon button,
+#subtotal button{
+background-color: #088178;
+color: #fff;
+padding: 12px 20px;
+}
+#subtotal{
+  width:50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;padding: 30px;
+
+}
+#subtotal table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#subtotal table td{
+  width: 50%;
+  border: 1px solid#e2e9e1;
+  padding: 10px;
+  font-size:30px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 40%;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 799px) {
+  .section-p1{
+    padding:40px  40px;
+  }
+#navbar{
+  display: flex;
+  flex-direction:column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: fixed;
+  top:0;
+  right:-300px;
+  height:100vh;
+  width:300px;
+  background-color: #e3e6f3;
+  box-shadow: 0.40px 60px rgba(0, 0, 0, 0.1);
+  padding: 80px 0px 0px 10px;
+  transition: 0.3s;
+}
+#navbar.active{
+  right: 0;
+}
+#navbar li{
+  margin-bottom: 25px;
+}
+#mobile {
+  display: flex;
+  align-items: center;
+}
+#mobile i{
+  color: #1a1a1a;
+  font-size: 24px;
+  padding: 20px;
+}
+#close{
+  display: initial;
+  position: absolute;
+  top:30px;
+  left:30px;
+  color:#222;
+  font-size: 24px;
+}
+#lg-bag{
+  display: none;
+}
+#hero {
+   height: 70vh;
+  padding: 0 80px;
+  background-position: top 30% right 30%;
+
+}
+#feature {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to move to the next line */
+  justify-content: center; /* Centers items */
+  gap: 20px; /* Space between elements */
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px; /* Prevents too wide spacing */
+  margin: 0 auto; /* Centers the section */
+  text-align: center;
+}
+
+#feature .fe-box {
+  margin: 15px 0px; /* Fixes typo */
+  flex: 1 1 calc(33.33% - 40px); /* Ensures 3 items per row */
+  min-width: 200px; /* Minimum width for responsiveness */
+  max-width: 300px; /* Prevents items from being too large */
+  text-align: center;
+}
+#product .pro{
+  margin:15px;
+}
+#banner{
+  height:20vh;
+}
+#sm-banner {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  justify-content: space-between; /* Distributes banners evenly */
+  gap: 20px; /* Adds spacing between banners */
+  width: 100%;
+}
+
+#sm-banner .banner-box {
+  flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  height: 30vh;
+  min-width: 45%; /* Ensures items stay in a row */
+  max-width: 50%; /* Prevents them from being too wide */
+}
+#banner3{
+  padding:0 40px;
+}
+#banner3 .banner-box{
+  width: 30%;
+}
+}
+
+@media(max-width:477px){
+  #header{
+    padding:10px 30px;
+
+  }
+  #hero{
+    padding:0 20px;
+    background-position: 55%;
+  }
+  #feature{
+    justify-content: space-between;
+  }
+  #feature .fe-box{
+    width: 155px;
+    margin:0 0 15px 0;
+  }
+  #product1 .pro{
+    width:100%;
+  }
+  #banner{
+    height:40vh;
+  }
+  #sm-banner .banner-box{
+    height: 40vh;
+  }
+  #sm-banner .banner-box2{
+  margin-top: 20px;
+  }
+  #banner3{
+    padding: 0 20px;
+  }
+  #banner3 .banner-box{
+    width:100%
+  }
+  #newsletter{
+    padding:40px 20px;
+  }
+  #newsletter .form{
+    width: 100%;
+  }
+  footer .copyright{
+    text-align:start;
+  }
+  /* Single Product*/
+  #prodetails{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #prodetails .single-pro-image{
+    width:100%;
+    margin-right: 0px;
+  }
+  #prodetails .single-pro-details{
+    width:100%;
+  }
+
+
+
+/*Blog Page*/
+
+#blog{
+  padding:100px 20px 0 20px;
+}
+#blog .blog-box{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* About Page */
+#about-head{
+  flex-direction: column;
+}
+#about-head img{
+  width:100%;
+  margin-bottom: 20px;
+}
+#about-head div{
+  padding-left: 0px;
+}
+#about-app .video{
+  width: 100%;
+}
+
+}
+
+
+
